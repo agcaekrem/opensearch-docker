@@ -20,16 +20,5 @@ pipeline {
         sh 'docker-compose ps'
       }
     }
-     stage('Run tests against the container') {
-      steps {
-        sh 'curl http://10.254.156.25:5601/'
-      }
-    }
-  }
-  post {
-    always {
-      sh 'docker-compose down --remove-orphans -v'
-      sh 'docker-compose ps'
-    }
-  }
+  } 
 }
